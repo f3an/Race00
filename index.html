@@ -12,32 +12,62 @@
 
 <body>
     <h1 id="logo">Calculator</h1>
-    <div class=”calculator”>
-        <div class=”calculator__display”><span id="display" value="0">0</span></div>
-        <div class=”calculator__keys”>
-            <button class="key--operator" data-action="add" value="+" onclick="dis('+')">+</button>
-            <button class="key--operator" data-action="subtract" value="-" onclick="dis('-')">-</button>
+    <div class="calculator" id="calculator" data-toggle="ON">
+        <div class="calculator__display"><span id="display" value="0"></span></div>
+        <div class="calculator__keys">
+            <button class="key--ac" data-action="clear" onclick="clr()">C</button>
+            <button class="key--operator" data-action="add" value="+" onclick="dis('+')" id="plus">+</button>
+            <button class="key--operator" data-action="subtract" value="-" onclick="dis('-')" id="minus">-</button>
             <button class="key--operator" data-action="multiply" value="*" onclick="dis('*')">*</button>
             <button class="key--operator" data-action="divide" value="&#xf7;" onclick="dis('/')">&#xf7;</button>
+            <button class="key--item" value="7" onclick="dis('7')">7</button>
+            <button class="key--item" value="8" onclick="dis('8')">8</button>
+            <button class="key--item" value="9" onclick="dis('9')">9</button>
             <button class="key--operator" data-action="sign" value="+/-" onclick="sign('+/-')">+/-</button>
-            <button class="key--operator" data-action="exponantion" value="**" onclick="dis('**')">x <sup>n</sup> </button>
+            <button class="key--operator" data-action="exponantion" value="**" onclick="dis('**')"><sup>n</sup>x</button>
+            <button class="key--item" value="4" onclick="dis('4')">4</button>
+            <button class="key--item" value="5" onclick="dis('5')">5</button>
+            <button class="key--item" value="6" onclick="dis('6')">6</button>
             <button class="key--operator" data-action="factorialize" value="*^" onclick="factorialize()">x!</button>
             <button class="key--operator" data-action="squire root" value="&#8730;" onclick="sqrt()">&#8730;x</button>
-            <button value="7" onclick="dis('7')">7</button>
-            <button value="8" onclick="dis('8')">8</button>
-            <button value="9" onclick="dis('9')">9</button>
-            <button value="4" onclick="dis('4')">4</button>
-            <button value="5" onclick="dis('5')">5</button>
-            <button value="6" onclick="dis('6')">6</button>
-            <button value="1" onclick="dis('1')">1</button>
-            <button value="2" onclick="dis('2')">2</button>
-            <button value="3" onclick="dis('3')">3</button>
-            <button value="0" onclick="dis('0')">0</button>
-            <button data-action="decimal" onclick="dis('.')">.</button>
-            <button data-action="clear" onclick="clr()">C</button>
+            <button class="key--item" value="1" onclick="dis('1')">1</button>
+            <button class="key--item" value="2" onclick="dis('2')">2</button>
+            <button class="key--item" value="3" onclick="dis('3')">3</button>
+            <button class="key--operator" data-action="Write value in Memory" value="mr" onclick="display()">mr</button>
+            <button class="key--operator" data-action="Clear Memory" value="mc" onclick="display2()">mc</button>
+            <button class="key--operator" data-action="Memory value + current value" value="m+" onclick="madd()">m+</button>
+            <button class="key--operator" data-action="Memory value + current value" value="m-" onclick="msubtract()">m-</button>
+            <button class="key--operator" data-action="Insert from Clipboard calculating history" value="m-" onclick="insertfromClipboard()">in</button>
+            <button class="key--zero" value="0" onclick="dis('0')">0</button>
+            <button class="key--decimal" data-action="Add to Clipboard calculating history" onclick="copyinClipboard()">📋</button>
+            <button class="key--decimal" id="showclipboard" data-action="show a Clipboard arrey" onclick="displayclipboardarr()">📋d</button>
             <button class="key--equal" data-action="calculate" onclick="solve()">=</button>
         </div>
     </div>
+    <div id="converter" data-toggle="OFF">
+        <div id="conversion-inputs">
+            <div>
+                <label>Millimeters</label>
+                <input id="inputMM" class="conversion-input" type="number" placeholder="Millimeters" oninput="lengthConverter(this.id,this.value)" onchange="lengthConverter(this.id,this.value)">
+            </div>
+
+            <div>
+                <label>Centimeters</label>
+                <input id="inputCM" class="conversion-input" type="number" placeholder="Centimeter" oninput="lengthConverter(this.id,this.value)" onchange="lengthConverter(this.id,this.value)">
+            </div>
+
+            <div>
+                <label>Meters</label>
+                <input id="inputM" class="conversion-input" type="number" placeholder="Meters" oninput="lengthConverter(this.id,this.value)" onchange="lengthConverter(this.id,this.value)">
+            </div>
+
+            <div>
+                <label>Kilometers</label>
+                <input id="inputKM" class="conversion-input" type="number" placeholder="Kilometers" oninput="lengthConverter(this.id,this.value)" onchange="lengthConverter(this.id,this.value)">
+            </div>
+        </div>
+    </div>
+    <button id="toggle" class="toggle" onclick="toggle()">CONVERSION MODE</button>
 </body>
 
 </html>

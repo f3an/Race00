@@ -1,3 +1,191 @@
-body{
-    
+* {
+    outline: none;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+#logo {
+    text-shadow: 1px 1px 2px #1b6d85;
+    color: #2a3e51;
+}
+
+.calculator {
+    width: 220px;
+    height: 340px;
+    box-shadow: 1px 1px 10px 2px gray;
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 3px;
+    background: black;
+}
+
+.calculator__display {
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    font-size: 20px;
+    display: flex;
+    border: 2px solid lightgray;
+    border-radius: 10px;
+    height: 100px;
+    width: 200px;
+    padding: 3px;
+    margin-top: 4px;
+    margin-left: auto;
+    margin-right: auto;
+    background: linear-gradient(45deg, grey, darkgray, grey);
+}
+
+#display {
+    margin-top: 80px;
+}
+
+.calculator__keys {
+    display: block;
+    margin: 8px;
+    height: 190px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    text-align: center;
+    background: black;
+}
+
+.calculator__keys>button {
+    height: 34px;
+    width: 34px;
+    margin: 2px 1px 1px;
+    border-radius: 17px;
+    background: orange;
+    color: white;
+    border-style: none;
+}
+
+.calculator__keys>button.key--operator:hover,
+button.key--equal:hover {
+    background: #b57603;
+}
+
+.calculator__keys>button.key--item {
+    background: #888;
+}
+
+.calculator__keys>button.key--item:hover {
+    background: #666;
+}
+
+.calculator__keys>button.key--ac,
+button#plus,
+button#minus {
+    background: #f8f8f8;
+    color: black;
+}
+
+.calculator__keys>button.key--ac:hover,
+button#plus:hover,
+button#minus:hover {
+    background: #cfcdcd;
+    color: black;
+}
+
+.calculator__keys>button.key--zero {
+    background: #888;
+    width: 74px;
+}
+
+.calculator__keys>button.key--equal {
+    width: 74px;
+}
+
+.calculator__keys>button.key--decimal {
+    background: #888;
+}
+
+.calculator__keys>button.key--zero:hover,
+button.key--decimal:hover {
+    background: #666;
+}
+
+body {
+    text-align: center;
+}
+
+#converter {
+    display: none;
+}
+
+#conversion-inputs {
+    width: 500px;
+    padding: 40px 20px;
+    margin: auto;
+    margin-top: 50px;
+    text-align: left;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: black;
+    border-radius: 10px;
+    color: white;
+    box-shadow: 1px 1px 10px 2px gray;
+}
+
+#conversion-inputs>div {
+    margin: 10px auto;
+}
+
+.toggle {
+    padding: 10px;
+    margin-top: 20px;
+    background-color: orange;
+    color: white;
+    border: none;
+    border-radius: 20px;
+}
+
+.toggle:focus {
+    padding: 10px;
+    margin-top: 20px;
+    background-color: orange;
+    color: white;
+    border: none;
+    border-radius: 20px;
+}
+
+.toggle:hover {
+    cursor: pointer;
+    background-color: black;
+}
+
+.conversion-input {
+    display: block;
+    border: 1px soild #ccc;
+    padding: 9px;
+    width: 200px;
+}
+
+@media screen and (max-width: 576px) {
+    .converter-box {
+        width: 100%;
+    }
+    #conversion-inputs {
+        display: block;
+        width: 90%;
+        margin: 0 auto;
+        padding: 40px 20px;
+    }
+    .toggle {
+        margin-top: 20px;
+    }
+    .conversion-input {
+        display: block;
+        border: 1px soild #ccc;
+        padding: 9px;
+        width: 90%;
+    }
+    .conversion-input#inputCM {
+        margin-bottom: 50px;
+    }
+}
+
+#showclipboard {
+    display: none;
 }
