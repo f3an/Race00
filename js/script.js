@@ -170,10 +170,14 @@ function insertfromClipboard() {
     el.focus();
     document.execCommand('paste');
     let value = el.value;
-    document.body.removeChild(el)
+    document.body.removeChild(el);
     clipboard.join(value);
     array = clipboard.join(" ");
-    console.log(array);
+    if (array == "") {
+        console.error("Clipboard is empty");
+    } else {
+        console.log(array);
+    }
 }
 
 function displayclipboardarr() {
