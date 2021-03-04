@@ -32,7 +32,7 @@ function solve() {
 //function for clearing the display
 function clr() {
     document.getElementById("display").innerHTML = "";
-    document.getElementById("display1").innerHTML = "";
+    document.getElementById("display1").innerHTML = "0";
     console.log("clear");
 }
 
@@ -95,7 +95,6 @@ function notdone() {
     console.log("At that moment funtinon is not done");
     alert("At that moment funtinon is not done");
 }
-
 
 
 //Memmory functions Start
@@ -192,7 +191,7 @@ function displayclipboardarr() {
 //END OF CLIPBOARD FUNCTIONS
 //Rick button START
 function rick() {
-    alert("You are RickRolled ,Bro");
+    alert("You are RickRolled!");
 }
 //END of Rick button
 //converter functions
@@ -227,6 +226,67 @@ function lengthConverter(source, val) {
     }
 }
 
+// weight converter
+function weightConverter(source, val) {
+    val = parseFloat(val);
+    const inputGM = document.getElementById("inputGM");
+    const inputKG = document.getElementById("inputKG");
+    const inputP = document.getElementById("inputP");
+    const inputT = document.getElementById("inputT");
+    if (source == "inputGM") {
+        inputKG.value = (val / 1000);
+        inputP.value = (val / 454);
+        inputT.value = (val / 1000000);
+    }
+    if (source == "inputKG") {
+        inputGM.value = (val * 1000);
+        inputP.value = (val * 2.205);
+        inputT.value = (val / 1000);
+    }
+    if (source == "inputP") {
+        inputGM.value = (val * 454);
+        inputKG.value = (val / 2.205);
+        inputT.value = (val / 2205);
+    }
+    if (source == "inputT") {
+        inputGM.value = (val * 1000000);
+        inputKG.value = (val * 1000);
+        inputP.value = (val * 2205);
+    }
+}
+
+// area converter
+function areaConverter(source, val) {
+    val = parseFloat(val);
+    const inputsquareCM = document.getElementById("inputsquareCM");
+    const inputSquareM = document.getElementById("inputSquareM");
+    const inputSquareKM = document.getElementById("inputSquareKM");
+    const inputHectares = document.getElementById("inputHectares");
+    if (source == "inputsquareCM") {
+        inputSquareM.value = (val / 10000);
+        inputSquareKM.value = (val / 10000000000);
+        inputHectares.value = (val / 100000000);
+    }
+
+    if (source == "inputSquareM") {
+        inputsquareCM.value = (val * 1000);
+        inputSquareKM.value = (val / 1000000);
+        inputHectares.value = (val / 10000);
+    }
+
+    if (source == "inputSquareKM") {
+        inputsquareCM.value = (val * 1000000000);
+        inputSquareM.value = (val * 1000000);
+        inputHectares.value = (val * 100);
+    }
+
+    if (source == "inputHectares") {
+        inputsquareCM.value = (val * 100000000);
+        inputSquareM.value = (val * 10000);
+        inputSquareKM.value = (val / 100);
+    }
+}
+
 const calculator = document.getElementById("calculator");
 const converter = document.getElementById("converter");
 const toggleBtn = document.getElementById("toggle");
@@ -249,6 +309,7 @@ function toggle() {
         toggleBtn.textContent = "CALCULATOR MODE"
         logo.textContent = "Converter"
         clearinput();
+        clr();
     } else if (calculator.dataset.toggle == "OFF") {
         calculator.style.display = "block";
         converter.style.display = "none"

@@ -122,25 +122,33 @@ body {
 
 #conversion-inputs {
     width: 500px;
-    padding: 40px 20px;
+    padding: 10px 20px 40px 20px;
     margin: auto;
     margin-top: 50px;
     text-align: left;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
     background: black;
     border-radius: 10px;
     color: white;
     box-shadow: 1px 1px 10px 2px gray;
 }
 
-#conversion-inputs>div {
+#conversion-inputs>h2{
+    text-align: center;
+}
+
+#conversion-section>div {
     margin: 10px auto;
+}
+
+#conversion-section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
 .toggle {
     padding: 10px;
     margin-top: 20px;
+    margin-bottom: 80px;
     background-color: orange;
     color: white;
     border: none;

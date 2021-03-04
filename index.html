@@ -51,24 +51,87 @@
     </div>
     <div id="converter" data-toggle="OFF">
         <div id="conversion-inputs">
-            <div>
-                <label>Millimeters</label>
-                <input id="inputMM" class="conversion-input" type="number" placeholder="Millimeters" oninput="lengthConverter(this.id,this.value)" onchange="lengthConverter(this.id,this.value)">
+            <h2>Lenghts Converter</h2>
+            <div id="conversion-section">
+                <div>
+                    <label>Millimeters</label>
+                    <input id="inputMM" class="conversion-input" type="number" placeholder="Millimeters"
+                        oninput="lengthConverter(this.id,this.value)" onchange="lengthConverter(this.id,this.value)">
+                </div>
+    
+                <div>
+                    <label>Centimeters</label>
+                    <input id="inputCM" class="conversion-input" type="number" placeholder="Centimeter"
+                        oninput="lengthConverter(this.id,this.value)" onchange="lengthConverter(this.id,this.value)">
+                </div>
+    
+                <div>
+                    <label>Meters</label>
+                    <input id="inputM" class="conversion-input" type="number" placeholder="Meters"
+                        oninput="lengthConverter(this.id,this.value)" onchange="lengthConverter(this.id,this.value)">
+                </div>
+    
+                <div>
+                    <label>Kilometers</label>
+                    <input id="inputKM" class="conversion-input" type="number" placeholder="Kilometers"
+                        oninput="lengthConverter(this.id,this.value)" onchange="lengthConverter(this.id,this.value)">
+                </div>
             </div>
-
-            <div>
-                <label>Centimeters</label>
-                <input id="inputCM" class="conversion-input" type="number" placeholder="Centimeter" oninput="lengthConverter(this.id,this.value)" onchange="lengthConverter(this.id,this.value)">
+    
+            <!-- WEIGHT CONVERTER  -->
+            <h2>Weight Converter</h2>
+            <div id="conversion-section">
+                <div>
+                    <label>Grams</label>
+                    <input id="inputGM" class="conversion-input" type="number" placeholder="Grams"
+                        oninput="weightConverter(this.id,this.value)" onchange="weightConverter(this.id,this.value)">
+                </div>
+    
+                <div>
+                    <label>Kilograms</label>
+                    <input id="inputKG" class="conversion-input" type="number" placeholder="Kilograms"
+                        oninput="weightConverter(this.id,this.value)" onchange="weightConverter(this.id,this.value)">
+                </div>
+    
+                <div>
+                    <label>Pounds</label>
+                    <input id="inputP" class="conversion-input" type="number" placeholder="Pounds"
+                        oninput="weightConverter(this.id,this.value)" onchange="weightConverter(this.id,this.value)">
+                </div>
+    
+                <div>
+                    <label>Tonnes</label>
+                    <input id="inputT" class="conversion-input" type="number" placeholder="Tonnes"
+                        oninput="weightConverter(this.id,this.value)" onchange="weightConverter(this.id,this.value)">
+                </div>
             </div>
-
-            <div>
-                <label>Meters</label>
-                <input id="inputM" class="conversion-input" type="number" placeholder="Meters" oninput="lengthConverter(this.id,this.value)" onchange="lengthConverter(this.id,this.value)">
-            </div>
-
-            <div>
-                <label>Kilometers</label>
-                <input id="inputKM" class="conversion-input" type="number" placeholder="Kilometers" oninput="lengthConverter(this.id,this.value)" onchange="lengthConverter(this.id,this.value)">
+    
+            <!-- AREA CONVERTER  -->
+            <h2>Area Converter</h2>
+            <div id="conversion-section">
+                <div>
+                    <label>Square Centimeters</label>
+                    <input id="inputsquareCM" class="conversion-input" type="number" placeholder="Square Centimeters"
+                        oninput="areaConverter(this.id,this.value)" onchange="areaConverter(this.id,this.value)">
+                </div>
+    
+                <div>
+                    <label>Square Meters</label>
+                    <input id="inputSquareM" class="conversion-input" type="number" placeholder="Square Meters"
+                        oninput="areaConverter(this.id,this.value)" onchange="areaConverter(this.id,this.value)">
+                </div>
+    
+                <div>
+                    <label>Square Kilometers</label>
+                    <input id="inputSquareKM" class="conversion-input" type="number" placeholder="Square Kilometers"
+                        oninput="areaConverter(this.id,this.value)" onchange="areaConverter(this.id,this.value)">
+                </div>
+    
+                <div>
+                    <label>Hectares</label>
+                    <input id="inputHectares" class="conversion-input" type="number" placeholder="Hectares"
+                        oninput="areaConverter(this.id,this.value)" onchange="areaConverter(this.id,this.value)">
+                </div>
             </div>
         </div>
     </div>
