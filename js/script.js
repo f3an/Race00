@@ -190,7 +190,11 @@ function displayclipboardarr() {
     console.log(clipboard);
 }
 //END OF CLIPBOARD FUNCTIONS
-
+//Rick button START
+function rick() {
+    alert("You are RickRolled ,Bro");
+}
+//END of Rick button
 //converter functions
 function lengthConverter(source, val) {
     val = parseFloat(val);
