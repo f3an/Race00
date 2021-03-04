@@ -1,13 +1,13 @@
 //validation
 function dis(val) {
-    document.getElementById("display").innerHTML += val;
+    document.getElementById("display1").innerHTML += val;
     console.log(val);
     clipboard.push(val);
 }
 
 //function for calculating the result Start
 function solve() {
-    let x = document.getElementById("display").innerHTML;
+    const x = document.getElementById("display1").innerHTML;
     if (x.substring(0, 1) == "/" ||
         x.endsWith(".") ||
         x.endsWith("-") ||
@@ -20,8 +20,9 @@ function solve() {
         console.error("calculation cannot start or end with the calculation function or end with a dot");
         clr();
     } else {
+        document.getElementById("display").innerHTML = x;
         let y = eval(x);
-        document.getElementById("display").innerHTML = y;
+        document.getElementById("display1").innerHTML = y;
         console.log(y);
         clipboard.push("= " + y + "\n");
     }
@@ -31,42 +32,44 @@ function solve() {
 //function for clearing the display
 function clr() {
     document.getElementById("display").innerHTML = "";
+    document.getElementById("display1").innerHTML = "";
     console.log("clear");
 }
 
 
 //function to change sign
 function sign() {
-    let x = document.getElementById("display").innerHTML;
+    const x = document.getElementById("display1").innerHTML;
     if (x == "") {
         console.error("Enter a number");
     } else if (x == 0) {
         console.error("Enter a number greater or less than 0");
         clr();
     } else if (x.substring(0, 1) != "-") {
-        document.getElementById("display").innerHTML = "-" + x;
-        clipboard.push("= " + document.getElementById("display").innerHTML + "\n");
+        document.getElementById("display1").innerHTML = "-" + x;
+        clipboard.push("= " + document.getElementById("display1").innerHTML + "\n");
     } else {
-        document.getElementById("display").innerHTML = x.substring(1, x.length);
-        clipboard.push("= " + document.getElementById("display").innerHTML + "\n");
+        document.getElementById("display1").innerHTML = x.substring(1, x.length);
+        clipboard.push("= " + document.getElementById("display1").innerHTML + "\n");
     }
 }
 
 
 //function to calculating factorial
 function factorialize() {
-    let x = document.getElementById("display").innerHTML;
+    const x = document.getElementById("display1").innerHTML;
     if (x == "") {
         console.error("You can't take a factorial from nothing");
     } else {
-        num = parseFloat(document.getElementById("display").innerHTML);
+        num = parseFloat(document.getElementById("display1").innerHTML);
+        document.getElementById("display").innerHTML = num + "!";
         if (num === 0 || num === 1)
             return 1;
-        for (var i = num - 1; i >= 1; i--) {
+        for (let i = num - 1; i >= 1; i--) {
             num *= i;
         }
-        document.getElementById("display").innerHTML = num;
-        clipboard.push("= " + document.getElementById("display").innerHTML + "\n");
+        document.getElementById("display1").innerHTML = num.toFixed(2);
+        clipboard.push("= " + document.getElementById("display1").innerHTML + "\n");
         console.log(num);
     }
 }
@@ -74,12 +77,13 @@ function factorialize() {
 //function to calculating square root
 
 function sqrt() {
-    x = Math.sqrt(parseFloat(document.getElementById("display").innerHTML));
+    document.getElementById("display").innerHTML = "&#8730;" + document.getElementById("display1").innerHTML;
+    const x = Math.sqrt(parseFloat(document.getElementById("display1").innerHTML));
     if (isNaN(x)) {
         console.error("Enter the number");
     } else {
         console.log(x);
-        document.getElementById("display").innerHTML = x;
+        document.getElementById("display1").innerHTML = x.toFixed(3);;
         clipboard.push("= " + document.getElementById("display").innerHTML + "\n");
     }
 }
@@ -99,7 +103,7 @@ function notdone() {
 let y;
 //save a number in memory
 function ms() {
-    y = parseFloat(document.getElementById("display").innerHTML);
+    y = parseFloat(document.getElementById("display1").innerHTML);
     return y;
 }
 
@@ -109,22 +113,24 @@ function cm() {
 }
 //function M+
 function madd() {
-    current = parseFloat(document.getElementById("display").innerHTML);
+    const current = parseFloat(document.getElementById("display1").innerHTML);
     if (isNaN(y) || y == "") {
         console.error("Memory is empty");
     } else {
+        document.getElementById("display").innerHTML = parseFloat(document.getElementById("display1").innerHTML) + "+" + current;
         let x = y + current;
-        document.getElementById("display").innerHTML = x;
+        document.getElementById("display1").innerHTML = x;
     }
 }
 //function M-
 function msubtract() {
-    current = parseFloat(document.getElementById("display").innerHTML);
+    const current = parseFloat(document.getElementById("display1").innerHTML);
     if (isNaN(y) || y == "") {
         console.error("Memory is empty");
     } else {
+        document.getElementById("display").innerHTML = parseFloat(document.getElementById("display1").innerHTML) + "-" + y;
         let x = current - y;
-        document.getElementById("display").innerHTML = x;
+        document.getElementById("display1").innerHTML = x;
     }
 }
 
