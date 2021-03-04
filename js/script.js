@@ -84,7 +84,7 @@ function sqrt() {
     } else {
         console.log(x);
         document.getElementById("display1").innerHTML = x.toFixed(3);;
-        clipboard.push("= " + document.getElementById("display").innerHTML + "\n");
+        clipboard.push("= " + document.getElementById("display1").innerHTML + "\n");
     }
 }
 
@@ -116,9 +116,11 @@ function madd() {
     if (isNaN(y) || y == "") {
         console.error("Memory is empty");
     } else {
-        document.getElementById("display").innerHTML = parseFloat(document.getElementById("display1").innerHTML) + "+" + current;
+        document.getElementById("display").innerHTML = current + "+" + y;
         let x = y + current;
         document.getElementById("display1").innerHTML = x;
+        clipboard.push(document.getElementById("display").innerHTML);
+        clipboard.push("= " + document.getElementById("display1").innerHTML + "\n");
     }
 }
 //function M-
@@ -127,9 +129,11 @@ function msubtract() {
     if (isNaN(y) || y == "") {
         console.error("Memory is empty");
     } else {
-        document.getElementById("display").innerHTML = parseFloat(document.getElementById("display1").innerHTML) + "-" + y;
+        document.getElementById("display").innerHTML = current + "-" + y;
         let x = current - y;
         document.getElementById("display1").innerHTML = x;
+        clipboard.push(document.getElementById("display").innerHTML);
+        clipboard.push("= " + document.getElementById("display1").innerHTML + "\n");
     }
 }
 
@@ -152,7 +156,7 @@ let display2 = () => {
 
 //CLIPBOARD FUNCTIONS
 
-let clipboard = [];
+const clipboard = [];
 
 function copyinClipboard() {
     if (clipboard == 0) {
